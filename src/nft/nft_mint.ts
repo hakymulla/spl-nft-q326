@@ -8,6 +8,7 @@ import {
 import { create, mplCore } from "@metaplex-foundation/mpl-core";
 import { base58 } from "@metaplex-foundation/umi/serializers";
 
+
 const umi = createUmi(
   process.env.SOLANA_RPC_URL ?? "https://api.devnet.solana.com",
 );
@@ -22,15 +23,21 @@ umi.use(mplCore());
 (async () => {
   try {
     const metadataUri =
-      "https://gateway.irys.xyz/BihKZnhMCvxN3i34cv25eEyFgUvBVGJQn1Gp11D4LxEi ";
+      "https://gateway.irys.xyz/G6ZBE6he79GsmQuAvx6raXjo9xgCWap6oj6TQdPZfJtU";
     const asset = generateSigner(umi);
 
     //add you nft name and metadata uri
-    // const tx = await create()
+    const tx = await create(umi, {
+      asset,
+      uri: metadataUri,
+      name: "Mullaaaa"
+    });
 
-    // const signature = base58.deserialize(tx.signature)[0];
+    const sig = (await tx.sendAndConfirm(umi)).signature;
 
-    // console.log(`signature ${signature} , asset : ${asset.publicKey}`);
+    const signature = base58.deserialize(sig)[0];
+
+    console.log(`signature ${signature} , asset : ${asset.publicKey}`);
   } catch (e) {
     console.log(`errior ${e}`);
   }
