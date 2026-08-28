@@ -23,7 +23,7 @@ umi.use(mplCore());
 (async () => {
   try {
     const metadataUri =
-      "https://gateway.irys.xyz/G6ZBE6he79GsmQuAvx6raXjo9xgCWap6oj6TQdPZfJtU";
+      "https://gateway.irys.xyz/EWRd3C5dAPDBAWKu4ErkQ62RFqTM5Y8Tx4No692aja1G";
     const asset = generateSigner(umi);
 
     //add you nft name and metadata uri

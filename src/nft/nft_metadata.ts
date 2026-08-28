@@ -25,7 +25,7 @@ umi.use(signerIdentity(signer));
   try {
     //change the image uri to your image uri obtained from nft_image.ts
     const image =
-      " https://gateway.irys.xyz/AfR1XmHuDRgAJ7cLSzkTmvNc4zMZ3iZ4TM8pRaiyxiiF";
+      " https://gateway.irys.xyz/8DaYCK8AYqoofXpdedDfCv4nBWN1YT6z1fFj1ToNquYa";
 
     //json scheme : https://www.metaplex.com/docs/smart-contracts/core/json-schema
     //change the metadata
